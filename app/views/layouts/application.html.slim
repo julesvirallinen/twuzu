@@ -1,10 +1,22 @@
-doctype html
+/doctype html
 html
   head
-    title
-      | Twuzu
-    = csrf_meta_tags
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  title Twuzu
+  = csrf_meta_tags
+
+  = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload'
+  = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"
+
+
   body
+    = render 'layouts/header'
+    div.container
+      - if flash[:notice]
+        div.alert.alert-info
+          = flash[:notice]
+      - if flash[:alert]
+        div.alert.alert-danger
+          = flash[:alert]
+  div.container
     = yield
