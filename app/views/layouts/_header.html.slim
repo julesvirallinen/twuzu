@@ -1,16 +1,16 @@
 nav.navbar.navbar-default role="navigation"
   .container-fluid
     .navbar-header
-      button.navbar-toggle data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button"
+      button.navbar-toggle class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false"
         span.sr-only Toggle navigation
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      a.navbar-brand href="/tzeets"  TWUZU
-    #bs-example-navbar-collapse-1.collapse.navbar-collapse
-      /ul.nav.navbar-nav
-      /  li.active
-      /    a href="/tzeets"  Tzeets
+      a.navbar-brand href="/tzeets"  Twuzu
+    .collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li.active
+          a href="/tzeets"  Tzeets
       ul.nav.navbar-nav.navbar-right
         - unless user_signed_in?
           li
