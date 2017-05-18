@@ -1,10 +1,10 @@
 # TWUZU, a quick twitter clone 
 
-[link to heroku](twuzu.herokuapp.com)
+[link to heroku](https://twuzu.herokuapp.com)
 
 #### Overview
 
-Welcome to Twuzu, a light twitter clone! 
+Welcome to Twuzu, a light, mobile friendly, twitter clone! 
 
 Signed in users can post messages, which anyone can see. The front page shows the last 20-or-so messages.
 The profile page for a user shows recent tzeets (tweets), from that user. 
