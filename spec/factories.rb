@@ -7,5 +7,6 @@ FactoryGirl.define do
 
   factory :tzeet do
     text 'hello world!!'
+    user
   end
 end
