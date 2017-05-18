@@ -28,11 +28,14 @@ a:hover {
 h4 {
   color: #2d3638;
 }
+.form-control {
+  margin-bottom: 1em;
+}
+
 
 @media (min-width: 600px) {
   .form-control {
     width: 60%;
-    margin-bottom: 1em;
   }
 }
 

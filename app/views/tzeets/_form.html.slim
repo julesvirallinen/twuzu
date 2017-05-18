@@ -3,7 +3,6 @@
   = form_for @tzeet do |f|
     .field
       = f.text_area :text, autofocus: true, :class => 'form-control', :placeholder => 'What\'s on your mind?'
-    br
     = f.hidden_field :user_id, :value => current_user.id
     .actions
       = f.submit 'Tzeet it!', :class => 'btn'
