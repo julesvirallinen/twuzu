@@ -1,3 +1,17 @@
 // Place all the styles related to the Tzeets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+small {
+  margin-left: 5px;
+}
+
+.individual-tzeet {
+  margin-top: 10px;
+  border: 1px solid grey;
+}
+
+.individual-tzeet:first-child {
+  margin-top: 0;
+}

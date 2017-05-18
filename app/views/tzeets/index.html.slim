@@ -1,23 +1,16 @@
 h1 Recent Tzeets
 
-table
-  thead
-    tr
-      th Text
-      th User
-      th
-      th
-      th
+ul.list-group#tzeet-list
+  - @tzeets.each do |tzeet|
+    li.list-group-item.individual-tzeet
+      b
+        = tzeet.user.username
+      small
+        = time_ago_in_words tzeet.created_at
+      br
+      = tzeet.text
+      br
+      = link_to 'Show', tzeet
+      = link_to 'Edit', edit_tzeet_path(tzeet)
+      = link_to 'Destroy', tzeet, data: {confirm: 'Are you sure?'}, method: :delete
 
-  tbody
-    - @tzeets.each do |tzeet|
-      tr
-        td = tzeet.text
-        td = tzeet.user
-        td = link_to 'Show', tzeet
-        td = link_to 'Edit', edit_tzeet_path(tzeet)
-        td = link_to 'Destroy', tzeet, data: { confirm: 'Are you sure?' }, method: :delete
-
-br
-
-= link_to 'New Tzeet', new_tzeet_path
