@@ -4,4 +4,8 @@ FactoryGirl.define do
     email 'user@user.com'
     password 'password'
   end
+
+  factory :tzeet do
+    text 'hello world!!'
+  end
 end
