@@ -13,3 +13,4 @@ deploy:
   app: twuzu
   on:
     repo: julkku/twuzu
+  skip_cleanup: true
