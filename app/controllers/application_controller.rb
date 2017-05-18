@@ -3,6 +3,12 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  def require_admin
+    unless current_user&.admin
+      redirect_to root_path, alert: 'Not permitted'
+    end
+  end
+
   def configure_permitted_parameters
     added_attrs = [:username, :email, :password, :password_confirmation, :remember_me]
     devise_parameter_sanitizer.permit :sign_up, keys: added_attrs

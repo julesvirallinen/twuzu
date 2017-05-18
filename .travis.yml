@@ -10,6 +10,9 @@ deploy:
   provider: heroku
   api_key:
     secure: dlffEIxUhR6fFZDkxpR9owaCgIG8LgzAml8hDZEbxdVGbM2hGPHIgx9FZ/4wrvzWLrj/kkrMINJdq9xeQx+JRIljU5HVFkOotbUScM3WGfWQ5hyDZdvKQOOhuiPNdiNxHUzpxGaFbN4QLbq5BpPYvE0oVLY25bWeofiSxuZOYNjHENnlkjekswhhEnf9zaQDeK68WT9+0uuQnarUqfSdAJUl+DNIngvDJNL35DpUCGYpZPHB8AhEz2YJ6JGd1F/L/M9Ock1keBhTpGsdKUcOLq2TFYPIepv/rZw539YAPXX3Hml9byPVSWcB+AvftSskK3urVworIx7XQKE6CISmt37gkMYBIdFk2XiUcXqDvQpnN7+u5uTBe49UcPiRyqmAFdyC/EzXgakYcYFer6EFkDQhVES/7RNzCc5Q6SISTngVK28Me+OXWqibdyuQhR6Zkt0NxoG0qPtLtpfTaAnfUQiWPmz4TfP05bB6/SUv2GgkNE9YZHXbcvtkYNexOgnUamTq43mJxOkuwcZo2Ep+FynpeKVHSzD2VI/GNSIgGyr+wYCvGXYfKiKMsZOY2EXpOdx4LunOi2KBnApu/eXDRKZrrJ4lJb1llRecHOjL9od7Ps9vH0Y6nAfhSNvcLf2nmXa8p8ROxF/ITZ2ipzeogsF6jSe+S5zY+j7gMyLrTIU=
+    run:
+        - rake db:migrate
+        - restart
   app: twuzu
   on:
     repo: julkku/twuzu

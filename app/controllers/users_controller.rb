@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
+  before_action :require_admin, only: [:index]
+
   def index
-    unless current_user&.admin
-      redirect_to root_path, alert: 'Not permitted'
-    end
     @users = User.all
   end
 

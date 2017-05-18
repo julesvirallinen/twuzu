@@ -1,16 +1,16 @@
 class TzeetsController < ApplicationController
   before_action :set_tzeet, only: [:show, :edit, :update, :destroy]
+  before_action :require_admin, except: [:index, :create]
+
   # before_action :authenticate_user!
 
   # GET /tzeets
-  # GET /tzeets.json
   def index
     @tzeets = Tzeet.all.recent
     @tzeet = Tzeet.new
   end
 
   # GET /tzeets/1
-  # GET /tzeets/1.json
   def show
   end
 
