@@ -3,4 +3,4 @@ h4
   span.label.label-success
     = "#{pluralize(@user.tzeets.count, 'tzeet')}"
 br
-== render 'tzeets/list', tzeets: @user.tzeets
+== render 'tzeets/list', tzeets: @user.tzeets.recent

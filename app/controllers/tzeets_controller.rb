@@ -5,7 +5,7 @@ class TzeetsController < ApplicationController
   # GET /tzeets
   # GET /tzeets.json
   def index
-    @tzeets = Tzeet.all.order(created_at: :desc)
+    @tzeets = Tzeet.all.recent
     @tzeet = Tzeet.new
   end
 
