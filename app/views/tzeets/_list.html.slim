@@ -3,7 +3,10 @@ ul.list-group#tzeet-list
   - tzeets.each do |tzeet|
     li.list-group-item.individual-tzeet
       b
-        = link_to tzeet.user.username, tzeet.user
+        - if tzeet.user
+          = link_to tzeet.user.username, tzeet.user
+        - else
+            | [deleted]
       small
         = time_ago_in_words tzeet.created_at
       br
