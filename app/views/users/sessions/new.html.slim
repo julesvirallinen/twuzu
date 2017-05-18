@@ -1,14 +1,14 @@
 h2
   | Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+= form_for(resource, as: resource_name, url: session_path(resource_name), :class => 'form-inline') do |f|
   .field
     = f.label :login
     br
-    = f.text_field :login, autofocus: true
+    = f.text_field :login, autofocus: true, :class => 'form-control'
   .field
     = f.label :password
     br
-    = f.password_field :password, autocomplete: "off"
+    = f.password_field :password, autocomplete: "off", :class => 'form-control'
   - if devise_mapping.rememberable?
     .field
       = f.check_box :remember_me

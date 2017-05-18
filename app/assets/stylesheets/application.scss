@@ -17,5 +17,25 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+a {
+  color: black;
+}
 
+a:hover {
+  color: #1c2324;
+}
 
+h4 {
+  color: #2d3638;
+}
+
+@media (min-width: 600px) {
+  .form-control {
+    width: 60%;
+    margin-bottom: 1em;
+  }
+
+  li {
+    width: 60%;
+  }
+}

@@ -1,0 +1,14 @@
+h4 Recent Tzeets
+ul.list-group#tzeet-list
+  - tzeets.each do |tzeet|
+    li.list-group-item.individual-tzeet
+      b
+        = link_to tzeet.user.username, tzeet.user
+      small
+        = time_ago_in_words tzeet.created_at
+      br
+      = tzeet.text
+      br
+        /= link_to 'Show', tzeet
+        /= link_to 'Edit', edit_tzeet_path(tzeet)
+        /= link_to 'Destroy', tzeet, data: {confirm: 'Are you sure?'}, method: :delete

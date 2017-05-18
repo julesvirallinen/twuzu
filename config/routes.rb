@@ -2,9 +2,7 @@ Rails.application.routes.draw do
   # get 'users/index'
   root 'tzeets#index'
   match '/users', to: 'users#index', via: 'get'
-  match '/users/:id', to: 'users#show', via: 'get'
   # devise_for :users, :path_prefix => 'd'
-  # resources :users, :only =>[:show]
   resources :tzeets
   devise_for :users
 
@@ -14,6 +12,10 @@ Rails.application.routes.draw do
     get 'register', to: 'devise/registrations#new'
 
   end
+
+  resources :users, :only =>[:show]
+  match '/users/:id', to: 'users#show', via: 'get'
+
 
 
 end
