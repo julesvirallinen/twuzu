@@ -14,7 +14,13 @@ RSpec.describe "tzeets/index.html.slim", type: :view do
     it 'logged in user has field for creating tzeet' do
       expect(page).to have_content('Compose a tzeet')
     end
+    describe 'is created successfully' do
 
+      page.fill_in 'tzeet_text', with: 'Test tweet'
+      click_button 'Tzeet it!'
+      expect(Tzeet.count).to eq(1)
+      expect(Tzeet.last.text).to eq('Test tweet')
+    end
   end
 
   after(:all) { User.destroy_all }

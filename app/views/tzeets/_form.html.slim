@@ -1,6 +1,6 @@
 - if current_user
   h4 Compose a tzeet
-  = form_for :tzeet do |f|
+  = form_for @tzeet do |f|
     .field
       = f.text_area :text, autofocus: true, :class => 'form-control', :placeholder => 'What\'s on your mind?'
     br

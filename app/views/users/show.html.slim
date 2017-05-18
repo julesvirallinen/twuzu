@@ -1,2 +1,6 @@
-h1
+h4
   = @user.username
+  span.label.label-success
+    = "#{pluralize(@user.tzeets.count, 'tzeet')}"
+br
+== render 'tzeets/list', tzeets: @user.tzeets

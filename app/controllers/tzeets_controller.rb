@@ -1,10 +1,12 @@
 class TzeetsController < ApplicationController
   before_action :set_tzeet, only: [:show, :edit, :update, :destroy]
+  # before_action :authenticate_user!
 
   # GET /tzeets
   # GET /tzeets.json
   def index
     @tzeets = Tzeet.all.order(created_at: :desc)
+    @tzeet = Tzeet.new
   end
 
   # GET /tzeets/1
@@ -25,10 +27,12 @@ class TzeetsController < ApplicationController
   # POST /tzeets.json
   def create
     @tzeet = Tzeet.new(tzeet_params)
-
+    @tzeet.user = current_user
+    pp @tzeet
+    pp current_user
     respond_to do |format|
       if @tzeet.save
-        format.html { redirect_to @tzeet, notice: 'Tzeet was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Tzeet was successfully created.' }
         format.json { render :show, status: :created, location: @tzeet }
       else
         format.html { render :new }
