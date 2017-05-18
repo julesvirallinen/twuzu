@@ -1,0 +1,15 @@
+= form_for @tzeet do |f|
+  - if @tzeet.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@tzeet.errors.count, "error")} prohibited this tzeet from being saved:"
+      ul
+        - @tzeet.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :text
+    = f.text_field :text
+  .field
+    = f.label :user
+    = f.text_field :user
+  .actions = f.submit

@@ -1,0 +1,23 @@
+h1 Listing tzeets
+
+table
+  thead
+    tr
+      th Text
+      th User
+      th
+      th
+      th
+
+  tbody
+    - @tzeets.each do |tzeet|
+      tr
+        td = tzeet.text
+        td = tzeet.user
+        td = link_to 'Show', tzeet
+        td = link_to 'Edit', edit_tzeet_path(tzeet)
+        td = link_to 'Destroy', tzeet, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Tzeet', new_tzeet_path

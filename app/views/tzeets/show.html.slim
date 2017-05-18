@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Text:
+  = @tzeet.text
+p
+  strong User:
+  = @tzeet.user
+
+= link_to 'Edit', edit_tzeet_path(@tzeet)
+'  |
+= link_to 'Back', tzeets_path
