@@ -2,7 +2,7 @@
 
 [link to heroku](twuzu.herokuapp.com)
 
-####Overview
+#### Overview
 
 Welcome to Twuzu, a light twitter clone! 
 
@@ -13,6 +13,6 @@ Click on the username of a user to view their profile.
 
 An admin can view all users from /users. 
 
-####Getting started
+#### Getting started
 Clone and run `bundle install`. Run `rspec spec` to run test suite. 
 
