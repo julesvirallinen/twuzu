@@ -15,3 +15,10 @@ small {
 .individual-tzeet:first-child {
   margin-top: 0;
 }
+
+@media (min-width: 600px) {
+  .individual-tzeet {
+    width: 60%;
+  }
+
+}
