@@ -58,6 +58,9 @@ class TzeetsController < ApplicationController
   # DELETE /tzeets/1
   # DELETE /tzeets/1.json
   def destroy
+    unless @tzeet.user == current_user
+      redirect_to root_path
+    end
     @tzeet.destroy
     respond_to do |format|
       format.html { redirect_to tzeets_url, notice: 'Tzeet was successfully destroyed.' }
